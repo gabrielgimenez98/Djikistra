@@ -69,7 +69,6 @@ def input_data(tamanho_grafo):
 def transforma_grafo(lista_vertices):
 
     grafo = {}
-    grafo = {}
 
     for item in lista_vertices:
         grafo[item] = {}
@@ -111,20 +110,44 @@ def transforma_grafo(lista_vertices):
 
     return grafo
 
+def gera_matriz(lista,grafo):
+    cont = 0
+    for i in range(len(lista)):
+        matriz = []
+        for j in range(len(lista)-i):
+            if lista[j] in grafo[lista[i]]:
+                matriz.append(1)
+            else:
+                matriz.append(0)
+    
 
-tamanho_grafo = int(input("Digite a quantidade de vértices de o grafo terá\n"))
+        for i in range(cont):
+            print(' ', end=" ")
+
+        for item in matriz:
+            print(item,end = " ")
+
+        cont += 1
+
+    print('\n')
+
+
+tamanho_grafo = int(input("Digite a quantidade de vértices que o grafo terá\n"))
 
 lista = input_data(tamanho_grafo)
 
 grafo = transforma_grafo(lista)
 
-ini = input("Qual é a origem camarada?\n")
+ini = input("Qual é a origem?\n")
 
-fim = input("Qual é o destino camarada?\n")
+fim = input("Qual é o destino?\n")
 
 if ini.upper() in grafo and fim.upper() in grafo:
 
     dijkstra_path(grafo,ini.upper(),fim.upper())
 
 else:
-    print("mano tu é burro vai se fodeeeer faz o bagulho direito")
+    print("Você escolheu um vértice fora da lista, tente de novo")
+
+
+gera_matriz(lista,grafo)
