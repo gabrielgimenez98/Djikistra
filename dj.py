@@ -61,4 +61,13 @@ def printPath(distancias,inicio, fim):
         else:
             return inicio
 
-dijkstra_path(grafo,"A","F")
+def input_data(tamanho_grafo):
+    lst_full = ["A","B","C","D","E","F","G","H","I","J","K"]
+
+    return [lst_full[x] for x in range(tamanho_grafo)]
+
+# dijkstra_path(grafo,"A","F")
+
+tamanho_grafo = int(input("Digite a quantidade de vertices de o grafo tera\n"))
+
+lista = input_data(tamanho_grafo)
