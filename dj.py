@@ -1,22 +1,3 @@
-# grafo = { "A" : { "B" : 1, "C":2 },
-#           "B" : { "D":2, "E":4 },
-#           "C" : { "E":2 },
-#           "D" : { "F": 6 },
-#           "E" : { "F": 7 },
-#           "F" : { }
-#           }
-
-# grafo2 = {  "D" : { "A": 4, "H": 1 },
-#             "A" : { "H": 10, "E": 1 },
-#             "H" : { "E": 5, "I": 9 },
-#             "E" : { "F" : 3 },
-#             "I" : { "J" : 2 },
-#             "F" : { "I" : 1, "G": 7, "B": 1, "C": 3 },
-#             "G" : { },
-#             "J" : { "G" : 1 },
-#             "B" : { "C" : 2 },
-#             "C" : { } }
-            
 
 def dijkstra_path(grafo, origem, fim): #retorna a menor distancia de um No origem até um No destino e o caminho até ele
 
@@ -62,7 +43,8 @@ def printPath(distancias,inicio, fim):
             return inicio
 
 def input_data(tamanho_grafo):
-    lst_full = ["A","B","C","D","E","F","G","H","I","J","K"]
+    lst_full = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T",
+                "U","V"]
 
     return [lst_full[x] for x in range(tamanho_grafo)]
 
@@ -142,7 +124,10 @@ ini = input("Qual é a origem?\n")
 
 fim = input("Qual é o destino?\n")
 
+
 if ini.upper() in grafo and fim.upper() in grafo:
+    
+    print("usaremos o algoritmo dijkistra para achar o menor caminho")
 
     dijkstra_path(grafo,ini.upper(),fim.upper())
 
